@@ -1,5 +1,5 @@
 ---
-name: create-django-model
+name: django-create-model
 description: Create a new Django model
 argument-hint: [app-name] [model-name] [model-name-snake] [custom-instruction]
 disable-model-invocation: true
@@ -16,7 +16,7 @@ Create a new Django model named {{model_name}} following an opinionated checklis
 - `model-name-snake` - snake_case version (e.g., team_project)
 - `custom-instruction` - Any custom instructions (fields, etc.)
 
-**Example:** `/create-django-model my_app TeamProject team_project`
+**Example:** `/django-create-model my_app TeamProject team_project`
 
 ## Templates
 

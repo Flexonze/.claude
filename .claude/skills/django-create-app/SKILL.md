@@ -1,5 +1,5 @@
 ---
-name: create-django-app
+name: django-create-app
 description: Create a new Django app with proper structure and configuration
 argument-hint: <app-name>
 disable-model-invocation: true
