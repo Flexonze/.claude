@@ -1,0 +1,29 @@
+### React development guidelines
+
+- Use TypeScript. Define interfaces for props, state, and API responses. Avoid using `any`.
+- Use functional components with hooks exclusively.
+- Avoid code comments, prefer clear code and descriptive names.
+- Always use full variable names (e.g., "organizationName" instead of "orgName")
+- All user-facing text must use i18next. Never hardcode strings. Add translations to both en.json and fr.json with descriptive, hierarchical keys (e.g., "form.email.label").
+- Translation keys use lowercase with dots (e.g., "form.submit.button").
+- Use tailwind, with a theme
+- Always respect defined color palette and styling guidelines.
+- Name components and files in PascalCase (e.g., MyComponent.tsx). Name utilities in camelCase. Prefix special folders with underscore (e.g., `_styles/`).
+- Use configured import aliases instead of relative paths (e.g., `components/` instead of `../../components`).
+- Use React Context for global state (user info, auth, etc.).
+- Use TanStack Query for all API calls and server state management.
+- When using mutations, destructure `mutate` directly (e.g., `const { mutate: updateUser } = useUpdateUser();`) to avoid calling `.mutate` later.
+- Use local component state for UI-only state.
+- Export components from `_index.ts` files when appropriate.
+- Keep components focused and single-purpose.
+- Use semantic HTML and include ARIA labels for accessibility.
+- Lazy load routes and heavy components.
+- Use ErrorBoundary for component-level errors when necessary.
+- Prefer component composition over inheritance.
+- Minimize props drilling by using Context for deeply nested state.
+- Always check the latest version of a package before updating package.json (e.g., npm show <package> version), unless a version is explicitly specified.
+- Prioritize using existing components, styles and utilities before creating new ones.
+- Always use established patterns, colors, spacings & typography.
+- If the Playwright MCP or Chrome DevTools MCP is available when making visual changes, use it to take screenshots and iterate on the design instead of blindly making changes.
+- After completing a task, run linter and type check. Fix any issues that arise.
+- To start development use `npm start`
