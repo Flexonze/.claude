@@ -1,7 +1,11 @@
 ---
-argument-hint: [task-name]
+name: work-on-task
 description: Read and implement a task from .claude/tasks/ folder
+argument-hint: [task-name]
+disable-model-invocation: true
 ---
+
+# Work on Task
 
 Read a task file and implement it following best practices and the guidelines in CLAUDE.md.
 

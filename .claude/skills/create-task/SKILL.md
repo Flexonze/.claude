@@ -1,9 +1,17 @@
 ---
-argument-hint: [task-name]
+name: create-task
 description: Create a new task markdown file in .claude/tasks/not_started/ folder
+argument-hint: [task-name]
+disable-model-invocation: true
 ---
 
+# Create Task
+
 Create a new task file in the `.claude/tasks/not_started/` directory based on the provided task name.
+
+## Template
+
+Use the [task template](templates/task.md) as the base for new task files.
 
 ## Instructions
 
@@ -17,50 +25,7 @@ Create a new task file in the `.claude/tasks/not_started/` directory based on th
 
 3. **Check if task already exists**: Check all status folders (not_started, in_progress, completed) for `<task-name>.md`. If it exists, inform the user and ask if they want to overwrite or choose a different name.
 
-4. **Create the task file**: Create `.claude/tasks/not_started/<task-name>.md` with the following template:
-
-```markdown
-# [Task Name in Title Case]
-
-**Type:** [Backend | Frontend | UX | DevOps | Documentation | Testing | Bugfix | Research | Other]
-
-## Description
-
-[Brief description of what needs to be done]
-
-## Why
-
-[Why is this task necessary? What problem does it solve?]
-
-## Todo List
-
-- [ ] [Step 1]
-- [ ] [Step 2]
-- [ ] [Step 3]
-
-## Dependencies
-
-- Blocked by: None
-- Blocks: None
-
-## Notes
-
-[Additional context, considerations, or important information]
-
-## Related Files
-
-- `path/to/file1.py`
-- `path/to/file2.tsx`
-
-## Acceptance Criteria
-
-- [ ] [Criterion 1]
-- [ ] [Criterion 2]
-- [ ] Tests added/updated
-- [ ] Documentation updated if needed
-- [ ] Code follows CLAUDE.md guidelines
-- [ ] Linting and formatting passes
-```
+4. **Create the task file**: Create `.claude/tasks/not_started/<task-name>.md` using the [task template](templates/task.md).
 
 5. **Fill in the template**:
 
@@ -95,7 +60,6 @@ Tasks can have one or multiple types (comma-separated), including (but not restr
 - Bugfix
 - Research
 - Other
-- ...
 
 Examples:
 
@@ -105,4 +69,4 @@ Examples:
 
 ## Example
 
-If user runs `/create-task add-celery-support`, create `.claude/tasks/not_started/add-celery-support.md` with the template above and "Add Celery Support" as the title.
+If user runs `/create-task add-celery-support`, create `.claude/tasks/not_started/add-celery-support.md` with the template and "Add Celery Support" as the title.

@@ -1,9 +1,11 @@
 ---
-argument-hint: [feature-name]
+name: generate-db-diagram
 description: Generate database diagram
+argument-hint: [feature-name]
+disable-model-invocation: true
 ---
 
-# Database schema
+# Generate DB Diagram
 
 Generate a Mermaid class diagram representing the database schema related to: {{input}}
 

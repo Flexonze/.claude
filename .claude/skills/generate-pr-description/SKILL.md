@@ -1,6 +1,8 @@
 ---
-argument-hint: [parent-branch]
+name: generate-pr-description
 description: Generate PR title and description
+argument-hint: [parent-branch]
+disable-model-invocation: true
 ---
 
 # Generate PR Description
@@ -8,6 +10,10 @@ description: Generate PR title and description
 Analyze the git diff between the parent branch and the current branch and create a pull request title and description.
 
 **Parent branch:** Use "$1" if provided, otherwise default to "main"
+
+## Template
+
+Use the [PR description template](templates/pr-description.md) as the base structure.
 
 ## Instructions
 
@@ -28,26 +34,9 @@ Generate a PR title in this format:
 <ticket-number> - Concise title
 ```
 
-### PR Description Template
+### PR Description
 
-Generate the PR description following this template:
-
-```
-### :page_facing_up: Context
--
-
-### :heavy_check_mark: Done
-- [x] -
-
-### :tent: Boy Scout Rule
-- [ ] -
-
-### :camera_flash: Screenshots
--
-
-### :memo: Notes
--
-```
+Generate the PR description following the [template](templates/pr-description.md).
 
 ### Guidelines
 

@@ -1,0 +1,24 @@
+## Django development guidelines
+
+- Always add import at the top of files, never make import not at top of files.
+- Each model must be in its own file named after the model, e.g. project.py, employee.py.
+- Each Django Rest Framework API view should be in its own file. E.g. project_views.py
+- Each Django admin (ModelAdmin) should be in its own file. E.g. project_admin.py
+- Each celery task should be in its own file. E.g. generate_project_task.py
+- Serializers are all defined in serializers.py instead of their own file to avoid circular import problems.
+- Prefer DRF viewsets over DRF generic views.
+- Use Class-based views instead of function views.
+- Avoid code comments. Docstrings are fine for classes.
+- Use Django's TestCase for automated testing.
+- For Django admin custom display methods, use the `@admin.display()` decorator instead of setting attributes like `short_description` on the function.
+- Always use full words for variable and function names (e.g. user_organization instead of user_org)
+- Do not use try/except Exception as e; catch specific exceptions or let them raise.
+- Avoid wrapping the main logic inside an if block or using else statements when possible. Use early returns or inverted if conditions instead to keep the main flow unindented and easy to read.
+- Prefer `bulk_create()` over `.save()` in loops.
+- Avoid Django signals for model logic. Override the model's save() or delete() method instead. Signals are difficult to test and can cause unexpected side effects.
+- When adding ForeignKey fields to Django models, always import the model class directly and use the class reference instead of a string when possible. If this causes circular import issues, adjust the import order in the app's models `__init__.py` file to ensure dependencies are imported before dependent models.
+- To create migrations files, use `docker compose run --rm django python manage.py makemigrations`
+- To apply migrations, use `docker compose run --rm django python manage.py migrate`
+- Always check the latest version of a package before updating requirements.in (e.g. curl -s https://pypi.org/pypi/<package>/json | jq -r .info.version), unless a version is explicitly specified.
+- Always update requirements in requirements.in then compile requirements (which will create the requirements.txt file). Never manually touch requirements.txt.
+- After completing a task, always run code formatting/linting commands.

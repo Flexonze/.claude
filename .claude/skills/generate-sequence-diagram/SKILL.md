@@ -1,9 +1,11 @@
 ---
-argument-hint: [feature-name]
+name: generate-sequence-diagram
 description: Generate sequence diagram
+argument-hint: [feature-name]
+disable-model-invocation: true
 ---
 
-# Sequence
+# Generate Sequence Diagram
 
 Generate a simple Mermaid sequence diagram showing the flow of a feature: {{input}}
 
